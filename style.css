@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Bodoni Moda", serif;
+    font-size: 1.2rem;
+}
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(to right, #041308,#0b3317);
+
+}
+
+.left-text{
+    flex-basis: 30%;
+
+}
+
+.heading{
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.subheading{
+    color: #ddd;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.gallery{
+    flex-basis: 50%;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 120px;
+}
+.box{
+    background-size: cover;  /*very very very imp    to define the complete image */
+    background-position: top;   /*positioning the image accordingly*/
+    color: white;
+    display: flex;
+    justify-content:center;
+    text-align:center;
+    background-color: #222;
+    background-blend-mode: hard-light;
+    transition: all 1s ease-in-out;  /*this is giving another effect to the hover effect and here 1s representing that it should be  done in 1 second*/
+    cursor: grabbing;
+    font-size: 1.3rem;
+    
+}
+
+/*very imp     hover effect over image*/
+.box:hover { 
+    background-color: #999;
+    background-position: center;
+    box-shadow: 0 0 4px #fff;
+}
+
+
+/*very very important*/
+/*here below we are making the class or we can say function so that we can use it whenever required*/
+.row-2{
+    grid-row: span 2;
+}
+.col-2{
+    grid-column: span 2;
+}
+
+
+/* media queries for width <= 1024px    this we get by google it*/
+@media screen and (max-width:1024px){
+    .container{
+        flex-direction: column;
+        padding: 20px;
+    }
+    .gallery{
+        width: 100%;
+        grid-auto-rows: 220px;
+    }
+    .box{
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+}
+
